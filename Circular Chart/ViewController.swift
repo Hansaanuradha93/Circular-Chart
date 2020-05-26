@@ -15,7 +15,7 @@ class ViewController: UIViewController {
         let center = view.center
          
          
-        let circularPath = UIBezierPath(arcCenter: center, radius: view.frame.width / 2 - 20, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi, clockwise: true)
+        let circularPath = UIBezierPath(arcCenter: center, radius: view.frame.width / 2 - 20, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi - CGFloat.pi / 2, clockwise: true)
          
          let trackLayer = CAShapeLayer()
          trackLayer.path = circularPath.cgPath
