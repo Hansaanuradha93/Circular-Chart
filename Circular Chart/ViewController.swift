@@ -46,6 +46,8 @@ class ViewController: UIViewController {
         basicAnimation.fillMode = CAMediaTimingFillMode.forwards
         basicAnimation.isRemovedOnCompletion = false
         
+        basicAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
+        
         shapeLayer.add(basicAnimation, forKey: "circularWheel")
     }
 
