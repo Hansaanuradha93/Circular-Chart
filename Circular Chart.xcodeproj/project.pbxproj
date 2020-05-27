@@ -39,6 +39,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4743A26B247E26A000FFA891 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				4778041324791D2300BDFA12 /* ViewController.swift */,
+				4778041524791D2300BDFA12 /* Main.storyboard */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		4743A26C247E26B800FFA891 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				4778040F24791D2300BDFA12 /* AppDelegate.swift */,
+				4778041124791D2300BDFA12 /* SceneDelegate.swift */,
+				4778041824791D2600BDFA12 /* Assets.xcassets */,
+				4778041A24791D2600BDFA12 /* LaunchScreen.storyboard */,
+				4778041D24791D2600BDFA12 /* Info.plist */,
+			);
+			name = "Support Files";
+			sourceTree = "<group>";
+		};
+		4743A26D247E26CF00FFA891 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				4743A26E247E26E000FFA891 /* Circle View */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		4743A26E247E26E000FFA891 /* Circle View */ = {
+			isa = PBXGroup;
+			children = (
+				4743A269247E1EF000FFA891 /* CircleView.swift */,
+			);
+			path = "Circle View";
+			sourceTree = "<group>";
+		};
 		4778040324791D2300BDFA12 = {
 			isa = PBXGroup;
 			children = (
@@ -58,14 +95,9 @@
 		4778040E24791D2300BDFA12 /* Circular Chart */ = {
 			isa = PBXGroup;
 			children = (
-				4778040F24791D2300BDFA12 /* AppDelegate.swift */,
-				4778041124791D2300BDFA12 /* SceneDelegate.swift */,
-				4778041324791D2300BDFA12 /* ViewController.swift */,
-				4778041524791D2300BDFA12 /* Main.storyboard */,
-				4778041824791D2600BDFA12 /* Assets.xcassets */,
-				4778041A24791D2600BDFA12 /* LaunchScreen.storyboard */,
-				4778041D24791D2600BDFA12 /* Info.plist */,
-				4743A269247E1EF000FFA891 /* CircleView.swift */,
+				4743A26D247E26CF00FFA891 /* Custom Views */,
+				4743A26B247E26A000FFA891 /* Scenes */,
+				4743A26C247E26B800FFA891 /* Support Files */,
 			);
 			path = "Circular Chart";
 			sourceTree = "<group>";
