@@ -27,7 +27,7 @@ class ViewController: UIViewController {
         
          shapeLayer.path = circularPath.cgPath
          shapeLayer.strokeColor = UIColor.red.cgColor
-         shapeLayer.fillColor = UIColor.clear.cgColor
+         shapeLayer.fillColor = UIColor.white.cgColor
          shapeLayer.lineCap = CAShapeLayerLineCap.round
          shapeLayer.lineWidth = 10
          shapeLayer.strokeEnd = 1
@@ -38,17 +38,13 @@ class ViewController: UIViewController {
     }
     
     @objc func handleTap() {
-        
-        let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
-        basicAnimation.toValue = 0
-        basicAnimation.duration = 10
-        
-        basicAnimation.fillMode = CAMediaTimingFillMode.forwards
-        basicAnimation.isRemovedOnCompletion = false
-        
-        basicAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
-        
-        shapeLayer.add(basicAnimation, forKey: "circularWheel")
+        let center = view.center
+
+        let radius = view.frame.width / 2 + 10
+        let pulse = PulseLayer(numberOfPulses: 1, radius: radius, position: center)
+        pulse.animationDuration = 0.5
+        pulse.backgroundColor = UIColor.red.cgColor
+        self.view.layer.insertSublayer(pulse, below: shapeLayer)
     }
 
 
