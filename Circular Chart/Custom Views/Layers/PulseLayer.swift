@@ -40,7 +40,7 @@ class PulseLayer: CALayer {
         }
     }
     
-    func createScaleAnimation() -> CABasicAnimation {
+    private func createScaleAnimation() -> CABasicAnimation {
         
         let scaleAnimation = CABasicAnimation(keyPath: "transform.scale.xy")
         scaleAnimation.fromValue = NSNumber(value: initialPulseScale)
@@ -50,7 +50,7 @@ class PulseLayer: CALayer {
         return scaleAnimation
     }
     
-    func createOpacityAnimation() -> CAKeyframeAnimation {
+    private func createOpacityAnimation() -> CAKeyframeAnimation {
         
         let opacityAnimation = CAKeyframeAnimation(keyPath: "opacity")
         opacityAnimation.duration = animationDuration
@@ -60,7 +60,9 @@ class PulseLayer: CALayer {
         return opacityAnimation
     }
     
-    func setupAnimationGroup() {
+    
+    
+    private func setupAnimationGroup() {
         
         self.animationGroup = CAAnimationGroup()
         self.animationGroup.duration = animationDuration + nextPulseAfter
