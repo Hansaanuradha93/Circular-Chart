@@ -41,8 +41,8 @@ class ViewController: UIViewController {
         let center = view.center
 
         let radius = view.frame.width / 2 + 10
-        let pulse = PulseLayer(numberOfPulses: 1, radius: radius, position: center)
-        pulse.animationDuration = 0.5
+        let pulse = PulseLayer(numberOfPulses: 10, radius: radius, position: center)
+        pulse.animationDuration = 1.5
         pulse.backgroundColor = UIColor.red.cgColor
         self.view.layer.insertSublayer(pulse, below: shapeLayer)
     }
