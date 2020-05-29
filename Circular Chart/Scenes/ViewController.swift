@@ -18,23 +18,21 @@ class ViewController: UIViewController {
          
         let circularPath = UIBezierPath(arcCenter: center, radius: view.frame.width / 3 - 20, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi - CGFloat.pi / 2, clockwise: true)
          
-         trackLayer.path = circularPath.cgPath
-         trackLayer.strokeColor = UIColor.lightGray.cgColor
-         trackLayer.fillColor = UIColor.clear.cgColor
-         trackLayer.lineWidth = 10
-         view.layer.addSublayer(trackLayer)
-         
+        trackLayer.path = circularPath.cgPath
+        trackLayer.strokeColor = UIColor.lightGray.cgColor
+        trackLayer.fillColor = UIColor.clear.cgColor
+        trackLayer.lineWidth = 10
+        view.layer.addSublayer(trackLayer)
         
-         shapeLayer.path = circularPath.cgPath
+    
+        shapeLayer.path = circularPath.cgPath
         shapeLayer.strokeColor = UIColor.systemPink.cgColor
-         shapeLayer.fillColor = UIColor.white.cgColor
-         shapeLayer.lineCap = CAShapeLayerLineCap.round
-         shapeLayer.lineWidth = 10
-         shapeLayer.strokeEnd = 1
-
-         view.layer.addSublayer(shapeLayer)
-
-         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
+        shapeLayer.fillColor = UIColor.white.cgColor
+        shapeLayer.lineCap = CAShapeLayerLineCap.round
+        shapeLayer.lineWidth = 10
+        shapeLayer.strokeEnd = 1
+        view.layer.addSublayer(shapeLayer)
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
     }
     
     private func addStrokeEndAnimation() {
@@ -57,11 +55,9 @@ class ViewController: UIViewController {
         let pulse = PulseLayer(numberOfPulses: 10, radius: radius, position: center)
         pulse.animationDuration = 1.5
         pulse.backgroundColor = UIColor.systemPink.cgColor
-        self.view.layer.insertSublayer(pulse, below: trackLayer)
         
+        trackLayer.insertSublayer(pulse, below: trackLayer)
         addStrokeEndAnimation()
     }
-
-
 }
 
