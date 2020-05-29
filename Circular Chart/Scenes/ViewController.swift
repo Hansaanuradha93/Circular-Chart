@@ -51,7 +51,7 @@ class ViewController: UIViewController {
     @objc func handleTap() {
         
         let center = view.center
-        let radius = view.frame.width / 3 + 10
+        let radius = view.frame.width / 3 + 7
         let pulse = PulseLayer(numberOfPulses: 10, radius: radius, position: center)
         pulse.animationDuration = 1.5
         pulse.backgroundColor = UIColor.systemPink.cgColor
