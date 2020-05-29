@@ -16,7 +16,7 @@ class ViewController: UIViewController {
         let center = view.center
          
          
-        let circularPath = UIBezierPath(arcCenter: center, radius: view.frame.width / 2 - 20, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi - CGFloat.pi / 2, clockwise: true)
+        let circularPath = UIBezierPath(arcCenter: center, radius: view.frame.width / 3 - 20, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi - CGFloat.pi / 2, clockwise: true)
          
          trackLayer.path = circularPath.cgPath
          trackLayer.strokeColor = UIColor.lightGray.cgColor
@@ -26,7 +26,7 @@ class ViewController: UIViewController {
          
         
          shapeLayer.path = circularPath.cgPath
-         shapeLayer.strokeColor = UIColor.red.cgColor
+        shapeLayer.strokeColor = UIColor.systemPink.cgColor
          shapeLayer.fillColor = UIColor.white.cgColor
          shapeLayer.lineCap = CAShapeLayerLineCap.round
          shapeLayer.lineWidth = 10
@@ -53,7 +53,7 @@ class ViewController: UIViewController {
     @objc func handleTap() {
         
         let center = view.center
-        let radius = view.frame.width / 2 + 10
+        let radius = view.frame.width / 3 + 10
         let pulse = PulseLayer(numberOfPulses: 10, radius: radius, position: center)
         pulse.animationDuration = 1.5
         pulse.backgroundColor = UIColor.systemPink.cgColor
