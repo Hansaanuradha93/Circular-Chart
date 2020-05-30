@@ -14,6 +14,9 @@ class ViewController: UIViewController {
     }
     
     
+    override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
+    
+    
     private func configureViewController() { view.backgroundColor = .backgroundColor }
     
     
