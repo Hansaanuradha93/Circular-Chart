@@ -21,7 +21,7 @@ class ViewController: UIViewController {
         trackLayer.path = circularPath.cgPath
         trackLayer.strokeColor = UIColor.lightGray.cgColor
         trackLayer.fillColor = UIColor.clear.cgColor
-        trackLayer.lineWidth = 10
+        trackLayer.lineWidth = 15
         view.layer.addSublayer(trackLayer)
         
     
@@ -29,7 +29,7 @@ class ViewController: UIViewController {
         shapeLayer.strokeColor = UIColor.systemPink.cgColor
         shapeLayer.fillColor = UIColor.white.cgColor
         shapeLayer.lineCap = CAShapeLayerLineCap.round
-        shapeLayer.lineWidth = 10
+        shapeLayer.lineWidth = 15
         shapeLayer.strokeEnd = 1
         view.layer.addSublayer(shapeLayer)
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
@@ -51,7 +51,7 @@ class ViewController: UIViewController {
     @objc func handleTap() {
         
         let center = view.center
-        let radius = view.frame.width / 3 + 7
+        let radius = view.frame.width / 3 - 20
         let pulse = PulseLayer(numberOfPulses: 10, radius: radius, position: center)
         pulse.animationDuration = 1.5
         pulse.backgroundColor = UIColor.systemPink.cgColor
