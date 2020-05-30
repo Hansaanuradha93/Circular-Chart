@@ -5,11 +5,16 @@ class ViewController: UIViewController {
     let shapeLayer = CAShapeLayer()
     let trackLayer = CAShapeLayer()
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configureViewController()
         addCircularBar()
     }
+    
+    
+    private func configureViewController() { view.backgroundColor = .backgroundColor }
     
     
     private func addCircularBar() {
@@ -19,15 +24,15 @@ class ViewController: UIViewController {
         let circularPath = UIBezierPath(arcCenter: center, radius: view.frame.width / 3 - 20, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi - CGFloat.pi / 2, clockwise: true)
          
         trackLayer.path = circularPath.cgPath
-        trackLayer.strokeColor = UIColor.lightGray.cgColor
+        trackLayer.strokeColor = UIColor.trackStrokeColor.cgColor
         trackLayer.fillColor = UIColor.clear.cgColor
         trackLayer.lineWidth = 15
         view.layer.addSublayer(trackLayer)
         
     
         shapeLayer.path = circularPath.cgPath
-        shapeLayer.strokeColor = UIColor.systemPink.cgColor
-        shapeLayer.fillColor = UIColor.white.cgColor
+        shapeLayer.strokeColor = UIColor.outlineStrokeColor.cgColor
+        shapeLayer.fillColor = UIColor.backgroundColor.cgColor
         shapeLayer.lineCap = CAShapeLayerLineCap.round
         shapeLayer.lineWidth = 15
         shapeLayer.strokeEnd = 1
