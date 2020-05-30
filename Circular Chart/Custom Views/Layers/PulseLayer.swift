@@ -16,10 +16,10 @@ class PulseLayer: CALayer {
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
     
     
-    init(numberOfPulses: Float = Float.infinity, radius: CGFloat, position: CGPoint) {
+    init(numberOfPulses: Float = Float.infinity, radius: CGFloat, position: CGPoint, backgroundColor: UIColor) {
         super.init()
         
-        self.backgroundColor = UIColor.black.cgColor
+        self.backgroundColor = backgroundColor.cgColor
         self.contentsScale = UIScreen.main.scale
         self.opacity = 0
         self.radius = radius
