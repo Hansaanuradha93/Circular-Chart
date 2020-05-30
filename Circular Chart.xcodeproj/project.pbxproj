@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4743A26A247E1EF000FFA891 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4743A269247E1EF000FFA891 /* CircleView.swift */; };
 		4743A271247E279B00FFA891 /* PulseLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4743A270247E279B00FFA891 /* PulseLayer.swift */; };
+		4770E2772482B6CA00966741 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4770E2762482B6CA00966741 /* UIColor+Ext.swift */; };
 		4778041024791D2300BDFA12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4778040F24791D2300BDFA12 /* AppDelegate.swift */; };
 		4778041224791D2300BDFA12 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4778041124791D2300BDFA12 /* SceneDelegate.swift */; };
 		4778041424791D2300BDFA12 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4778041324791D2300BDFA12 /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		4743A269247E1EF000FFA891 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		4743A270247E279B00FFA891 /* PulseLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseLayer.swift; sourceTree = "<group>"; };
+		4770E2762482B6CA00966741 /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		4778040C24791D2300BDFA12 /* Circular Chart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Circular Chart.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4778040F24791D2300BDFA12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4778041124791D2300BDFA12 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +89,14 @@
 			path = Layers;
 			sourceTree = "<group>";
 		};
+		4770E2752482B6B100966741 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				4770E2762482B6CA00966741 /* UIColor+Ext.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		4778040324791D2300BDFA12 = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +118,7 @@
 			children = (
 				4743A26D247E26CF00FFA891 /* Custom Views */,
 				4743A26B247E26A000FFA891 /* Scenes */,
+				4770E2752482B6B100966741 /* Extension */,
 				4743A26C247E26B800FFA891 /* Support Files */,
 			);
 			path = "Circular Chart";
@@ -187,6 +198,7 @@
 				4743A26A247E1EF000FFA891 /* CircleView.swift in Sources */,
 				4778041424791D2300BDFA12 /* ViewController.swift in Sources */,
 				4778041024791D2300BDFA12 /* AppDelegate.swift in Sources */,
+				4770E2772482B6CA00966741 /* UIColor+Ext.swift in Sources */,
 				4778041224791D2300BDFA12 /* SceneDelegate.swift in Sources */,
 				4743A271247E279B00FFA891 /* PulseLayer.swift in Sources */,
 			);
