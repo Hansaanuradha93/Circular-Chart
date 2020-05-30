@@ -9,13 +9,12 @@ class PulseLayer: CALayer {
     var radius: CGFloat = 200
     var numberOfPulses: Float = Float.infinity
     
-    override init(layer: Any) {
-        super.init(layer: layer)
-    }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    override init(layer: Any) { super.init(layer: layer) }
+    
+    
+    required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
+    
     
     init(numberOfPulses: Float = Float.infinity, radius: CGFloat, position: CGPoint) {
         super.init()
@@ -48,6 +47,7 @@ class PulseLayer: CALayer {
         return scaleAnimation
     }
     
+    
     private func createOpacityAnimation() -> CAKeyframeAnimation {
         
         let opacityAnimation = CAKeyframeAnimation(keyPath: "opacity")
@@ -57,7 +57,6 @@ class PulseLayer: CALayer {
         
         return opacityAnimation
     }
-    
     
     
     private func setupAnimationGroup() {

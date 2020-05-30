@@ -40,6 +40,7 @@ class ViewController: UIViewController {
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
     }
     
+    
     private func addStrokeEndAnimation() {
         
         let strokeAnimation = CABasicAnimation(keyPath: "strokeEnd")
@@ -52,6 +53,7 @@ class ViewController: UIViewController {
         
         shapeLayer.add(strokeAnimation, forKey: "strokeEnd")
     }
+    
     
     @objc func handleTap() {
         
