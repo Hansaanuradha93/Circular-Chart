@@ -4,7 +4,6 @@ class PulseLayer: CALayer {
 
     var animationGroup = CAAnimationGroup()
     
-    var initialPulseScale: Float = 0
     var nextPulseAfter: TimeInterval = 0
     var animationDuration: TimeInterval = 3
     var radius: CGFloat = 200
@@ -42,9 +41,8 @@ class PulseLayer: CALayer {
     
     private func createScaleAnimation() -> CABasicAnimation {
         
-        let scaleAnimation = CABasicAnimation(keyPath: "transform.scale.xy")
-        scaleAnimation.fromValue = NSNumber(value: initialPulseScale)
-        scaleAnimation.toValue = NSNumber(value: 1)
+        let scaleAnimation = CABasicAnimation(keyPath: "transform.scale")
+        scaleAnimation.toValue = 1.2
         scaleAnimation.duration = animationDuration
         
         return scaleAnimation
@@ -54,8 +52,8 @@ class PulseLayer: CALayer {
         
         let opacityAnimation = CAKeyframeAnimation(keyPath: "opacity")
         opacityAnimation.duration = animationDuration
-        opacityAnimation.values = [0.4, 0.8, 0]
-        opacityAnimation.keyTimes = [0, 0.8, 1]
+        opacityAnimation.values = [0, 0.2, 0.4]
+        opacityAnimation.keyTimes = [0, 0.4, 0.6]
         
         return opacityAnimation
     }
@@ -67,8 +65,9 @@ class PulseLayer: CALayer {
         self.animationGroup = CAAnimationGroup()
         self.animationGroup.duration = animationDuration + nextPulseAfter
         self.animationGroup.repeatCount = numberOfPulses
+        self.animationGroup.autoreverses = true
         
-        let defaultCurve = CAMediaTimingFunction(name: CAMediaTimingFunctionName.default)
+        let defaultCurve = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
         self.animationGroup.timingFunction = defaultCurve
         self.animationGroup.animations = [createScaleAnimation(), createOpacityAnimation()]
     }
