@@ -82,7 +82,7 @@ class ViewController: UIViewController {
         pulse.animationDuration = 1.5
         pulse.backgroundColor = UIColor.systemPink.cgColor
         
-        trackLayer.insertSublayer(pulse, below: trackLayer)
+        view.layer.insertSublayer(pulse, below: trackLayer)
     }
     
     
