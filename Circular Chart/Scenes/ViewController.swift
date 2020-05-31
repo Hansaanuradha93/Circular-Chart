@@ -38,8 +38,8 @@ class ViewController: UIViewController {
     
     
     private func addCircularBar() {
+        
         let center = view.center
-         
          
         let circularPath = UIBezierPath(arcCenter: center, radius: view.frame.width / 3 - 20, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi - CGFloat.pi / 2, clockwise: true)
          
