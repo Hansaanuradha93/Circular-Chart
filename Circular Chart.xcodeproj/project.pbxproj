@@ -16,7 +16,6 @@
 		4778041724791D2300BDFA12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4778041524791D2300BDFA12 /* Main.storyboard */; };
 		4778041924791D2600BDFA12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4778041824791D2600BDFA12 /* Assets.xcassets */; };
 		4778041C24791D2600BDFA12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4778041A24791D2600BDFA12 /* LaunchScreen.storyboard */; };
-		47CEA29124841FE6006DC529 /* StrokeLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CEA29024841FE6006DC529 /* StrokeLayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +30,6 @@
 		4778041824791D2600BDFA12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4778041B24791D2600BDFA12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4778041D24791D2600BDFA12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		47CEA29024841FE6006DC529 /* StrokeLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokeLayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +85,6 @@
 			isa = PBXGroup;
 			children = (
 				4743A270247E279B00FFA891 /* PulseLayer.swift */,
-				47CEA29024841FE6006DC529 /* StrokeLayer.swift */,
 			);
 			path = Layers;
 			sourceTree = "<group>";
@@ -201,7 +198,6 @@
 				4743A26A247E1EF000FFA891 /* CircleView.swift in Sources */,
 				4778041424791D2300BDFA12 /* ViewController.swift in Sources */,
 				4778041024791D2300BDFA12 /* AppDelegate.swift in Sources */,
-				47CEA29124841FE6006DC529 /* StrokeLayer.swift in Sources */,
 				4770E2772482B6CA00966741 /* UIColor+Ext.swift in Sources */,
 				4778041224791D2300BDFA12 /* SceneDelegate.swift in Sources */,
 				4743A271247E279B00FFA891 /* PulseLayer.swift in Sources */,
