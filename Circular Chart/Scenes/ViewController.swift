@@ -2,11 +2,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    // MARK: Properties
     let shapeLayer = CAShapeLayer()
     let trackLayer = CAShapeLayer()
     var isFirstTime: Bool = true
 
     
+    // View Controller
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -17,24 +19,19 @@ class ViewController: UIViewController {
     
     
     override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
+}
+
+
+// MARK: - Methods
+extension ViewController {
     
+    private func configureViewController() { view.backgroundColor = .backgroundColor }
+
     
     private func setupNotification() {
         
         NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
-    
-    
-    @objc private func willEnterForeground() {
-        if !isFirstTime {
-            addPulseAnimation()
-        } else {
-            isFirstTime.toggle()
-        }
-    }
-    
-    
-    private func configureViewController() { view.backgroundColor = .backgroundColor }
     
     
     private func addCircularBar() {
@@ -83,6 +80,20 @@ class ViewController: UIViewController {
         pulse.backgroundColor = UIColor.systemPink.cgColor
         
         view.layer.insertSublayer(pulse, below: trackLayer)
+    }
+}
+
+
+// MARK: - Objc Methods
+extension ViewController {
+    
+    @objc private func willEnterForeground() {
+        
+        if !isFirstTime {
+            addPulseAnimation()
+        } else {
+            isFirstTime.toggle()
+        }
     }
     
     
