@@ -2,14 +2,15 @@ import UIKit
 
 class PulseLayer: CALayer {
 
+    // MARK: Properites
     var animationGroup = CAAnimationGroup()
-    
     var nextPulseAfter: TimeInterval = 0
     var animationDuration: TimeInterval = 3
     var radius: CGFloat = 200
     var numberOfPulses: Float = Float.infinity
     
     
+    // MARK: Initializers
     override init(layer: Any) { super.init(layer: layer) }
     
     
@@ -31,12 +32,13 @@ class PulseLayer: CALayer {
         
         DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async {
             self.setupAnimationGroup()
-            
-            DispatchQueue.main.async {
-                self.add(self.animationGroup, forKey: "pulse")
-            }
+            DispatchQueue.main.async { self.add(self.animationGroup, forKey: "pulse") }
         }
     }
+}
+
+// MARK: Methods
+extension PulseLayer {
     
     private func createScaleAnimation() -> CABasicAnimation {
         
