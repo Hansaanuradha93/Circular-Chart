@@ -17,7 +17,10 @@ class DoubleRingViewController: UIViewController {
     override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
     
     
-    private func configureViewController() { view.backgroundColor = .backgroundColor }
+    private func configureViewController() {
+        view.backgroundColor = .backgroundColor
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
+    }
     
     
     private func addRings() {
@@ -54,6 +57,25 @@ class DoubleRingViewController: UIViewController {
         innerRing.strokeEnd = 1
         
         return innerRing
+    }
+    
+    
+    @objc func handleTap() {
+        
+        addStrokeEndAnimation()
+    }
+    
+    private func addStrokeEndAnimation() {
+        
+        let strokeAnimation = CABasicAnimation(keyPath: "strokeEnd")
+        strokeAnimation.fromValue = 1
+        strokeAnimation.toValue = 0
+        strokeAnimation.duration = 15
+        
+        strokeAnimation.fillMode = CAMediaTimingFillMode.forwards
+        strokeAnimation.isRemovedOnCompletion = false
+        
+        innerRing.add(strokeAnimation, forKey: "strokeEnd")
     }
 
 }
