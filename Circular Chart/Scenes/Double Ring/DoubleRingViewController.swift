@@ -6,6 +6,8 @@ class DoubleRingViewController: UIViewController {
     let outerRing = CAShapeLayer()
     let innerRing = CAShapeLayer()
     
+    
+    // MARK: ViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -15,7 +17,18 @@ class DoubleRingViewController: UIViewController {
     
     
     override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
+}
+
+
+// MARK: - Objc Methods
+extension DoubleRingViewController {
     
+    @objc func handleTap() { addStrokeEndAnimation() }
+}
+
+
+// MARK: - Methods
+extension DoubleRingViewController {
     
     private func configureViewController() {
         view.backgroundColor = .backgroundColor
@@ -43,6 +56,7 @@ class DoubleRingViewController: UIViewController {
         return outerRing
     }
     
+    
     private func createInnerRing() -> CAShapeLayer {
         
         let center = view.center
@@ -60,11 +74,6 @@ class DoubleRingViewController: UIViewController {
     }
     
     
-    @objc func handleTap() {
-        
-        addStrokeEndAnimation()
-    }
-    
     private func addStrokeEndAnimation() {
         
         let strokeAnimation = CABasicAnimation(keyPath: "strokeEnd")
@@ -77,5 +86,4 @@ class DoubleRingViewController: UIViewController {
         
         innerRing.add(strokeAnimation, forKey: "strokeEnd")
     }
-
 }
