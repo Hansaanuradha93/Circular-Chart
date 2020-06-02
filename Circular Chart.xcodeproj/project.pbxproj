@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4743A26A247E1EF000FFA891 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4743A269247E1EF000FFA891 /* CircleView.swift */; };
 		4743A271247E279B00FFA891 /* PulseLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4743A270247E279B00FFA891 /* PulseLayer.swift */; };
+		476AD12B2486BC6200B2E7B7 /* DoubleRingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476AD12A2486BC6200B2E7B7 /* DoubleRingViewController.swift */; };
 		4770E2772482B6CA00966741 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4770E2762482B6CA00966741 /* UIColor+Ext.swift */; };
 		4778041024791D2300BDFA12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4778040F24791D2300BDFA12 /* AppDelegate.swift */; };
 		4778041224791D2300BDFA12 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4778041124791D2300BDFA12 /* SceneDelegate.swift */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		4743A269247E1EF000FFA891 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		4743A270247E279B00FFA891 /* PulseLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseLayer.swift; sourceTree = "<group>"; };
+		476AD12A2486BC6200B2E7B7 /* DoubleRingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleRingViewController.swift; sourceTree = "<group>"; };
 		4770E2762482B6CA00966741 /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		4778040C24791D2300BDFA12 /* Circular Chart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Circular Chart.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4778040F24791D2300BDFA12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +48,7 @@
 		4743A26B247E26A000FFA891 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				476AD12C2486BCE400B2E7B7 /* Double Ring */,
 				476AD1292486BBA600B2E7B7 /* Single Ring */,
 				4778041524791D2300BDFA12 /* Main.storyboard */,
 			);
@@ -95,6 +98,14 @@
 				4778041324791D2300BDFA12 /* RingViewController.swift */,
 			);
 			path = "Single Ring";
+			sourceTree = "<group>";
+		};
+		476AD12C2486BCE400B2E7B7 /* Double Ring */ = {
+			isa = PBXGroup;
+			children = (
+				476AD12A2486BC6200B2E7B7 /* DoubleRingViewController.swift */,
+			);
+			path = "Double Ring";
 			sourceTree = "<group>";
 		};
 		4770E2752482B6B100966741 /* Extension */ = {
@@ -203,6 +214,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				476AD12B2486BC6200B2E7B7 /* DoubleRingViewController.swift in Sources */,
 				4743A26A247E1EF000FFA891 /* CircleView.swift in Sources */,
 				4778041424791D2300BDFA12 /* RingViewController.swift in Sources */,
 				4778041024791D2300BDFA12 /* AppDelegate.swift in Sources */,
