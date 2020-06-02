@@ -1,6 +1,6 @@
 import UIKit
 
-class ViewController: UIViewController {
+class RingViewController: UIViewController {
 
     // MARK: Properties
     let shapeLayer = CAShapeLayer()
@@ -23,7 +23,7 @@ class ViewController: UIViewController {
 
 
 // MARK: - Methods
-extension ViewController {
+extension RingViewController {
     
     private func configureViewController() { view.backgroundColor = .backgroundColor }
 
@@ -85,7 +85,7 @@ extension ViewController {
 
 
 // MARK: - Objc Methods
-extension ViewController {
+extension RingViewController {
     
     @objc private func willEnterForeground() {
         
