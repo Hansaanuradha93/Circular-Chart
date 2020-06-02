@@ -22,6 +22,27 @@ class RingViewController: UIViewController {
 }
 
 
+// MARK: - Objc Methods
+extension RingViewController {
+    
+    @objc private func willEnterForeground() {
+        
+        if !isFirstTime {
+            addPulseAnimation()
+        } else {
+            isFirstTime.toggle()
+        }
+    }
+    
+    
+    @objc func handleTap() {
+        
+        addPulseAnimation()
+        addStrokeEndAnimation()
+    }
+}
+
+
 // MARK: - Methods
 extension RingViewController {
     
@@ -80,27 +101,6 @@ extension RingViewController {
         pulse.backgroundColor = UIColor.systemPink.cgColor
         
         view.layer.insertSublayer(pulse, below: trackLayer)
-    }
-}
-
-
-// MARK: - Objc Methods
-extension RingViewController {
-    
-    @objc private func willEnterForeground() {
-        
-        if !isFirstTime {
-            addPulseAnimation()
-        } else {
-            isFirstTime.toggle()
-        }
-    }
-    
-    
-    @objc func handleTap() {
-        
-        addPulseAnimation()
-        addStrokeEndAnimation()
     }
 }
 
