@@ -3,13 +3,14 @@ import UIKit
 class DoubleRingViewController: UIViewController {
 
     // MARK: Properties
-    let outerLayer = CAShapeLayer()
+    let outerRing = CAShapeLayer()
+    let innerRing = CAShapeLayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureViewController()
-        addCircularBar()
+        addRings()
     }
     
     
@@ -19,17 +20,40 @@ class DoubleRingViewController: UIViewController {
     private func configureViewController() { view.backgroundColor = .backgroundColor }
     
     
-    private func addCircularBar() {
+    private func addRings() {
+        view.layer.addSublayer(createOuterRing())
+        view.layer.addSublayer(createInnerRing())
+    }
+    
+    
+    private func createOuterRing() -> CAShapeLayer {
         
         let center = view.center
          
         let circularPath = UIBezierPath(arcCenter: center, radius: view.frame.width / 3 - 20, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi - CGFloat.pi / 2, clockwise: true)
          
-        outerLayer.path = circularPath.cgPath
-        outerLayer.strokeColor = UIColor.trackStrokeColor.cgColor
-        outerLayer.fillColor = UIColor.clear.cgColor
-        outerLayer.lineWidth = 15
-        view.layer.addSublayer(outerLayer)
+        outerRing.path = circularPath.cgPath
+        outerRing.strokeColor = UIColor.trackStrokeColor.cgColor
+        outerRing.fillColor = UIColor.clear.cgColor
+        outerRing.lineWidth = 15
+        
+        return outerRing
+    }
+    
+    private func createInnerRing() -> CAShapeLayer {
+        
+        let center = view.center
+         
+        let circularPath = UIBezierPath(arcCenter: center, radius: view.frame.width / 3 - 20 - 15, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi - CGFloat.pi / 2, clockwise: true)
+         
+        innerRing.path = circularPath.cgPath
+        innerRing.strokeColor = UIColor.outlineStrokeColor.cgColor
+        innerRing.fillColor = UIColor.backgroundColor.cgColor
+        innerRing.lineCap = CAShapeLayerLineCap.round
+        innerRing.lineWidth = 15
+        innerRing.strokeEnd = 1
+        
+        return innerRing
     }
 
 }
