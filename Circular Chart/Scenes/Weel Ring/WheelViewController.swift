@@ -89,7 +89,7 @@ extension WheelViewController {
         fillerRing.fillColor = UIColor.backgroundColor.cgColor
         fillerRing.lineCap = CAShapeLayerLineCap.round
         fillerRing.lineWidth = gap
-        fillerRing.strokeEnd = 1
+        fillerRing.strokeEnd = 0
         
         return fillerRing
     }
