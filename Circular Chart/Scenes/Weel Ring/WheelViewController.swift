@@ -21,19 +21,26 @@ class WheelViewController: UIViewController {
 }
 
 
+// MARK: - Objc Methods
+extension WheelViewController {
+    
+    @objc func handleTap() { addStrokeEndAnimation() }
+}
+
+
 // MARK: - Methods
 extension WheelViewController {
     
     private func configureViewController() {
         view.backgroundColor = .backgroundColor
-//        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
     }
     
     
     private func addRings() {
         view.layer.addSublayer(createOuterRing())
-        view.layer.addSublayer(createInnerRing())
         view.layer.addSublayer(createFillerRing())
+        view.layer.addSublayer(createInnerRing())
     }
     
     
@@ -75,13 +82,13 @@ extension WheelViewController {
         let center = view.center
         let gap: CGFloat = 10
          
-        let circularPath = UIBezierPath(arcCenter: center, radius: view.frame.width / 3 - 20 - gap, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi - CGFloat.pi / 2, clockwise: true)
+        let circularPath = UIBezierPath(arcCenter: center, radius: view.frame.width / 3 - 20 - gap / 2, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi - CGFloat.pi / 2, clockwise: true)
          
         fillerRing.path = circularPath.cgPath
         fillerRing.strokeColor = UIColor.outlineStrokeColor.cgColor
         fillerRing.fillColor = UIColor.backgroundColor.cgColor
         fillerRing.lineCap = CAShapeLayerLineCap.round
-        fillerRing.lineWidth = 5 + gap
+        fillerRing.lineWidth = gap
         fillerRing.strokeEnd = 1
         
         return fillerRing
@@ -91,13 +98,13 @@ extension WheelViewController {
     private func addStrokeEndAnimation() {
         
         let strokeAnimation = CABasicAnimation(keyPath: "strokeEnd")
-        strokeAnimation.fromValue = 1
-        strokeAnimation.toValue = 0
+        strokeAnimation.fromValue = 0
+        strokeAnimation.toValue = 1
         strokeAnimation.duration = 15
         
         strokeAnimation.fillMode = CAMediaTimingFillMode.forwards
         strokeAnimation.isRemovedOnCompletion = false
         
-        innerRing.add(strokeAnimation, forKey: "strokeEnd")
+        fillerRing.add(strokeAnimation, forKey: "strokeEnd")
     }
 }
