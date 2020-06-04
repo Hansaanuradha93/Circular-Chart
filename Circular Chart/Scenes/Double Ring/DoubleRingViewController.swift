@@ -4,7 +4,7 @@ class DoubleRingViewController: UIViewController {
 
     // MARK: Properties
     let outerRing = CAShapeLayer()
-    let innerRing = CAShapeLayer()
+    var innerRing = CAShapeLayer()
     
     
     // MARK: ViewController
@@ -37,8 +37,10 @@ extension DoubleRingViewController {
     
     
     private func addRings() {
+        innerRing = createRing(radius: view.frame.width / 3 - 20 - 15, strokeColor: UIColor.outlineStrokeColor, fillColor: UIColor.backgroundColor)
+        
         view.layer.addSublayer(createOuterRing())
-        view.layer.addSublayer(createInnerRing())
+        view.layer.addSublayer(innerRing)
     }
     
     
@@ -71,6 +73,23 @@ extension DoubleRingViewController {
         innerRing.strokeEnd = 1
         
         return innerRing
+    }
+    
+    private func createRing(radius: CGFloat, strokeColor: UIColor, fillColor: UIColor) -> CAShapeLayer {
+        
+        let center = view.center
+        let ring = CAShapeLayer()
+         
+        let circularPath = UIBezierPath(arcCenter: center, radius: radius, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi - CGFloat.pi / 2, clockwise: true)
+         
+        ring.path = circularPath.cgPath
+        ring.strokeColor = strokeColor.cgColor
+        ring.fillColor = fillColor.cgColor
+        ring.lineCap = CAShapeLayerLineCap.round
+        ring.lineWidth = 15
+        ring.strokeEnd = 1
+        
+        return ring
     }
     
     
