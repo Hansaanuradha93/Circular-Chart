@@ -31,12 +31,14 @@ extension DoubleRingViewController {
 extension DoubleRingViewController {
     
     private func configureViewController() {
+        
         view.backgroundColor = .backgroundColor
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
     }
     
     
     private func addRings() {
+        
         innerRing = createRing(radius: view.frame.width / 3 - 20 - 15, strokeColor: UIColor.outlineStrokeColor, fillColor: UIColor.backgroundColor)
         outerRing = createRing(radius: view.frame.width / 3 - 20, strokeColor: UIColor.trackStrokeColor, fillColor: UIColor.clear)
         view.layer.addSublayer(outerRing)
