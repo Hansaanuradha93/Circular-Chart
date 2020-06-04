@@ -3,9 +3,9 @@ import UIKit
 class WheelViewController: UIViewController {
 
     // MARK: Properties
-    let outerRing = CAShapeLayer()
-    let innerRing = CAShapeLayer()
-    let fillerRing = CAShapeLayer()
+    var outerRing = CAShapeLayer()
+    var innerRing = CAShapeLayer()
+    var fillerRing = CAShapeLayer()
     
     
     // MARK: ViewController
@@ -38,10 +38,30 @@ extension WheelViewController {
     
     
     private func addRings() {
+        outerRing = createRing(radius: view.frame.width / 3 - 20, strokeColor: UIColor.outlineStrokeColor, fillColor: UIColor.clear)
         view.layer.addSublayer(createOuterRing())
         view.layer.addSublayer(createFillerRing())
         view.layer.addSublayer(createInnerRing())
     }
+    
+    
+    private func createRing(radius: CGFloat, strokeColor: UIColor, fillColor: UIColor) -> CAShapeLayer {
+        
+        let center = view.center
+        let ring = CAShapeLayer()
+         
+        let circularPath = UIBezierPath(arcCenter: center, radius: radius, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi - CGFloat.pi / 2, clockwise: true)
+         
+        ring.path = circularPath.cgPath
+        ring.strokeColor = strokeColor.cgColor
+        ring.fillColor = fillColor.cgColor
+        ring.lineCap = CAShapeLayerLineCap.round
+        ring.lineWidth = 15
+        ring.strokeEnd = 1
+        
+        return ring
+    }
+
     
     
     private func createOuterRing() -> CAShapeLayer {
