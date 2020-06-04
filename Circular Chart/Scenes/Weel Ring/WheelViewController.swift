@@ -38,9 +38,13 @@ extension WheelViewController {
     
     
     private func addRings() {
+        
+        let gap: CGFloat = 10
+
         outerRing = createRing(radius: view.frame.width / 3 - 20, strokeColor: UIColor.outlineStrokeColor, fillColor: UIColor.clear)
-        view.layer.addSublayer(createOuterRing())
-        view.layer.addSublayer(createFillerRing())
+        fillerRing = createRing(radius: view.frame.width / 3 - 20 - gap / 2, strokeColor: UIColor.outlineStrokeColor, fillColor: UIColor.backgroundColor)
+        view.layer.addSublayer(outerRing)
+        view.layer.addSublayer(fillerRing)
         view.layer.addSublayer(createInnerRing())
     }
     
@@ -56,7 +60,7 @@ extension WheelViewController {
         ring.strokeColor = strokeColor.cgColor
         ring.fillColor = fillColor.cgColor
         ring.lineCap = CAShapeLayerLineCap.round
-        ring.lineWidth = 15
+        ring.lineWidth = 5
         ring.strokeEnd = 1
         
         return ring
