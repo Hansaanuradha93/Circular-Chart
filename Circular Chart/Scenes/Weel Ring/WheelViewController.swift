@@ -42,14 +42,16 @@ extension WheelViewController {
         let gap: CGFloat = 10
 
         outerRing = createRing(radius: view.frame.width / 3 - 20, strokeColor: UIColor.outlineStrokeColor, fillColor: UIColor.clear)
-        fillerRing = createRing(radius: view.frame.width / 3 - 20 - gap / 2, strokeColor: UIColor.outlineStrokeColor, fillColor: UIColor.backgroundColor)
+        fillerRing = createRing(radius: view.frame.width / 3 - 20 - gap / 2, strokeColor: UIColor.outlineStrokeColor, fillColor: UIColor.backgroundColor, strokeEnd: 0, lineWidth: gap)
+        innerRing = createRing(radius:  view.frame.width / 3 - 20 - gap, strokeColor: UIColor.outlineStrokeColor, fillColor: UIColor.backgroundColor)
+        
         view.layer.addSublayer(outerRing)
         view.layer.addSublayer(fillerRing)
-        view.layer.addSublayer(createInnerRing())
+        view.layer.addSublayer(innerRing)
     }
     
     
-    private func createRing(radius: CGFloat, strokeColor: UIColor, fillColor: UIColor) -> CAShapeLayer {
+    private func createRing(radius: CGFloat, strokeColor: UIColor, fillColor: UIColor, strokeEnd: CGFloat = 1, lineWidth: CGFloat = 5) -> CAShapeLayer {
         
         let center = view.center
         let ring = CAShapeLayer()
@@ -60,8 +62,8 @@ extension WheelViewController {
         ring.strokeColor = strokeColor.cgColor
         ring.fillColor = fillColor.cgColor
         ring.lineCap = CAShapeLayerLineCap.round
-        ring.lineWidth = 5
-        ring.strokeEnd = 1
+        ring.lineWidth = lineWidth
+        ring.strokeEnd = strokeEnd
         
         return ring
     }
