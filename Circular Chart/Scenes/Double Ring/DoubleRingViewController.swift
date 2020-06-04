@@ -3,7 +3,7 @@ import UIKit
 class DoubleRingViewController: UIViewController {
 
     // MARK: Properties
-    let outerRing = CAShapeLayer()
+    var outerRing = CAShapeLayer()
     var innerRing = CAShapeLayer()
     
     
@@ -38,8 +38,8 @@ extension DoubleRingViewController {
     
     private func addRings() {
         innerRing = createRing(radius: view.frame.width / 3 - 20 - 15, strokeColor: UIColor.outlineStrokeColor, fillColor: UIColor.backgroundColor)
-        
-        view.layer.addSublayer(createOuterRing())
+        outerRing = createRing(radius: view.frame.width / 3 - 20, strokeColor: UIColor.trackStrokeColor, fillColor: UIColor.clear)
+        view.layer.addSublayer(outerRing)
         view.layer.addSublayer(innerRing)
     }
     
