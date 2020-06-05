@@ -3,8 +3,8 @@ import UIKit
 class RingViewController: UIViewController {
 
     // MARK: Properties
-    var shapeLayer = CAShapeLayer()
-    var trackLayer = CAShapeLayer()
+    var shapeRing = CAShapeLayer()
+    var trackRing = CAShapeLayer()
     var isFirstTime: Bool = true
 
     
@@ -46,7 +46,10 @@ extension RingViewController {
 // MARK: - Methods
 extension RingViewController {
     
-    private func configureViewController() { view.backgroundColor = .backgroundColor }
+    private func configureViewController() {
+        view.backgroundColor = .backgroundColor
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
+    }
 
     
     private func setupNotification() {
@@ -75,12 +78,11 @@ extension RingViewController {
     private func addRings() {
         
         let radius: CGFloat = view.frame.width / 3 - 20
-        trackLayer = createRing(radius: radius, strokeColor:  UIColor.trackStrokeColor, fillColor: UIColor.clear)
-        shapeLayer = createRing(radius: radius, strokeColor: UIColor.outlineStrokeColor, fillColor: UIColor.backgroundColor)
+        trackRing = createRing(radius: radius, strokeColor:  UIColor.trackStrokeColor, fillColor: UIColor.clear)
+        shapeRing = createRing(radius: radius, strokeColor: UIColor.outlineStrokeColor, fillColor: UIColor.backgroundColor)
         
-        view.layer.addSublayer(trackLayer)
-        view.layer.addSublayer(shapeLayer)
-        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
+        view.layer.addSublayer(trackRing)
+        view.layer.addSublayer(shapeRing)
     }
     
     
@@ -94,18 +96,19 @@ extension RingViewController {
         strokeAnimation.fillMode = CAMediaTimingFillMode.forwards
         strokeAnimation.isRemovedOnCompletion = false
         
-        shapeLayer.add(strokeAnimation, forKey: "strokeEnd")
+        shapeRing.add(strokeAnimation, forKey: "strokeEnd")
     }
     
     
     private func addPulseAnimation() {
+        
         let center = view.center
         let radius = view.frame.width / 3 - 20
         let pulse = PulseLayer(numberOfPulses: 10, radius: radius, position: center, backgroundColor: .pulsatingFillColor)
         pulse.animationDuration = 1.5
         pulse.backgroundColor = UIColor.systemPink.cgColor
         
-        view.layer.insertSublayer(pulse, below: trackLayer)
+        view.layer.insertSublayer(pulse, below: trackRing)
     }
 }
 
