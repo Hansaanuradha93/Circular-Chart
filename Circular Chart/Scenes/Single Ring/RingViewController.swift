@@ -4,7 +4,7 @@ class RingViewController: UIViewController {
 
     // MARK: Properties
     let shapeLayer = CAShapeLayer()
-    let trackLayer = CAShapeLayer()
+    var trackLayer = CAShapeLayer()
     var isFirstTime: Bool = true
 
     
@@ -74,17 +74,13 @@ extension RingViewController {
     
     private func addRings() {
         
-        
+        trackLayer = createRing(radius: view.frame.width / 3 - 20, strokeColor:  UIColor.trackStrokeColor, fillColor: UIColor.clear)
+        view.layer.addSublayer(trackLayer)
+
         
         let center = view.center
          
         let circularPath = UIBezierPath(arcCenter: center, radius: view.frame.width / 3 - 20, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi - CGFloat.pi / 2, clockwise: true)
-         
-        trackLayer.path = circularPath.cgPath
-        trackLayer.strokeColor = UIColor.trackStrokeColor.cgColor
-        trackLayer.fillColor = UIColor.clear.cgColor
-        trackLayer.lineWidth = 15
-        view.layer.addSublayer(trackLayer)
         
     
         shapeLayer.path = circularPath.cgPath
