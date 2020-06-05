@@ -3,7 +3,7 @@ import UIKit
 class RingViewController: UIViewController {
 
     // MARK: Properties
-    let shapeLayer = CAShapeLayer()
+    var shapeLayer = CAShapeLayer()
     var trackLayer = CAShapeLayer()
     var isFirstTime: Bool = true
 
@@ -74,21 +74,11 @@ extension RingViewController {
     
     private func addRings() {
         
-        trackLayer = createRing(radius: view.frame.width / 3 - 20, strokeColor:  UIColor.trackStrokeColor, fillColor: UIColor.clear)
+        let radius: CGFloat = view.frame.width / 3 - 20
+        trackLayer = createRing(radius: radius, strokeColor:  UIColor.trackStrokeColor, fillColor: UIColor.clear)
+        shapeLayer = createRing(radius: radius, strokeColor: UIColor.outlineStrokeColor, fillColor: UIColor.backgroundColor)
+        
         view.layer.addSublayer(trackLayer)
-
-        
-        let center = view.center
-         
-        let circularPath = UIBezierPath(arcCenter: center, radius: view.frame.width / 3 - 20, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi - CGFloat.pi / 2, clockwise: true)
-        
-    
-        shapeLayer.path = circularPath.cgPath
-        shapeLayer.strokeColor = UIColor.outlineStrokeColor.cgColor
-        shapeLayer.fillColor = UIColor.backgroundColor.cgColor
-        shapeLayer.lineCap = CAShapeLayerLineCap.round
-        shapeLayer.lineWidth = 15
-        shapeLayer.strokeEnd = 1
         view.layer.addSublayer(shapeLayer)
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
     }
