@@ -106,7 +106,7 @@ extension RingViewController {
         let radius = view.frame.width / 3 - 20
         let pulse = PulseLayer(numberOfPulses: 10, radius: radius, position: center, backgroundColor: .pulsatingFillColor)
         pulse.animationDuration = 1.5
-        pulse.backgroundColor = UIColor.systemPink.cgColor
+        pulse.backgroundColor = UIColor.pulsatingFillColor.cgColor
         
         view.layer.insertSublayer(pulse, below: trackRing)
     }
