@@ -14,7 +14,7 @@ class RingViewController: UIViewController {
         
         configureViewController()
         setupNotification()
-        addCircularBar()
+        addRings()
     }
     
     
@@ -54,8 +54,27 @@ extension RingViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
     
+    private func createRing(radius: CGFloat, strokeColor: UIColor, fillColor: UIColor) -> CAShapeLayer {
+        
+        let center = view.center
+        let ring = CAShapeLayer()
+         
+        let circularPath = UIBezierPath(arcCenter: center, radius: radius, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi - CGFloat.pi / 2, clockwise: true)
+         
+        ring.path = circularPath.cgPath
+        ring.strokeColor = strokeColor.cgColor
+        ring.fillColor = fillColor.cgColor
+        ring.lineCap = CAShapeLayerLineCap.round
+        ring.lineWidth = 15
+        ring.strokeEnd = 1
+        
+        return ring
+    }
     
-    private func addCircularBar() {
+    
+    private func addRings() {
+        
+        
         
         let center = view.center
          
