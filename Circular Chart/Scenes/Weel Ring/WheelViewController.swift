@@ -70,15 +70,6 @@ extension WheelViewController {
     
     
     private func addStrokeEndAnimation() {
-        
-        let strokeAnimation = CABasicAnimation(keyPath: "strokeEnd")
-        strokeAnimation.fromValue = 0
-        strokeAnimation.toValue = 1
-        strokeAnimation.duration = 15
-        
-        strokeAnimation.fillMode = CAMediaTimingFillMode.forwards
-        strokeAnimation.isRemovedOnCompletion = false
-        
-        fillerRing.add(strokeAnimation, forKey: "strokeEnd")
+        fillerRing.strokeEndAnimation(fromValue: 0, toValue: 1, duration: 15)
     }
 }
