@@ -64,7 +64,5 @@ extension DoubleRingViewController {
     }
     
     
-    private func addStrokeEndAnimation() {
-        innerRing.strokeEndAnimation(fromValue: 1, toValue: 0, duration: 15)
-    }
+    private func addStrokeEndAnimation() { innerRing.strokeEndAnimation(fromValue: 1, toValue: 0, duration: 15) }
 }

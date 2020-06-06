@@ -47,6 +47,7 @@ extension RingViewController {
 extension RingViewController {
     
     private func configureViewController() {
+        
         view.backgroundColor = .backgroundColor
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
     }
@@ -86,9 +87,7 @@ extension RingViewController {
     }
     
     
-    private func addStrokeEndAnimation() {
-        shapeRing.strokeEndAnimation(fromValue: 1, toValue: 0, duration: 15)
-    }
+    private func addStrokeEndAnimation() { shapeRing.strokeEndAnimation(fromValue: 1, toValue: 0, duration: 15) }
     
     
     private func addPulseAnimation() {

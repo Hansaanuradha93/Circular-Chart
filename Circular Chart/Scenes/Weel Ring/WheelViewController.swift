@@ -69,7 +69,5 @@ extension WheelViewController {
     }
     
     
-    private func addStrokeEndAnimation() {
-        fillerRing.strokeEndAnimation(fromValue: 0, toValue: 1, duration: 15)
-    }
+    private func addStrokeEndAnimation() { fillerRing.strokeEndAnimation(fromValue: 0, toValue: 1, duration: 15) }
 }
