@@ -5,8 +5,8 @@ extension CAShapeLayer {
     func strokeEndAnimation(fromValue: CGFloat, toValue: CGFloat, duration: CFTimeInterval) {
         
         let strokeAnimation = CABasicAnimation(keyPath: "strokeEnd")
-        strokeAnimation.fromValue = 1
-        strokeAnimation.toValue = 0
+        strokeAnimation.fromValue = fromValue
+        strokeAnimation.toValue = toValue
         strokeAnimation.duration = 15
         
         strokeAnimation.fillMode = CAMediaTimingFillMode.forwards
