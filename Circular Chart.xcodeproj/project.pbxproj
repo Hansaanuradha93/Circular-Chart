@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4705B4BE2488149700E43C86 /* WheelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4705B4BD2488149700E43C86 /* WheelViewController.swift */; };
+		47198749248C008D003E1076 /* CAShapeLayer+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47198748248C008D003E1076 /* CAShapeLayer+Ext.swift */; };
 		4743A26A247E1EF000FFA891 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4743A269247E1EF000FFA891 /* CircleView.swift */; };
 		4743A271247E279B00FFA891 /* PulseLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4743A270247E279B00FFA891 /* PulseLayer.swift */; };
 		476AD12B2486BC6200B2E7B7 /* DoubleRingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476AD12A2486BC6200B2E7B7 /* DoubleRingViewController.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		4705B4BD2488149700E43C86 /* WheelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelViewController.swift; sourceTree = "<group>"; };
+		47198748248C008D003E1076 /* CAShapeLayer+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CAShapeLayer+Ext.swift"; sourceTree = "<group>"; };
 		4743A269247E1EF000FFA891 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		4743A270247E279B00FFA891 /* PulseLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseLayer.swift; sourceTree = "<group>"; };
 		476AD12A2486BC6200B2E7B7 /* DoubleRingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleRingViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				4770E2762482B6CA00966741 /* UIColor+Ext.swift */,
+				47198748248C008D003E1076 /* CAShapeLayer+Ext.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				4770E2772482B6CA00966741 /* UIColor+Ext.swift in Sources */,
 				4778041224791D2300BDFA12 /* SceneDelegate.swift in Sources */,
 				4743A271247E279B00FFA891 /* PulseLayer.swift in Sources */,
+				47198749248C008D003E1076 /* CAShapeLayer+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
