@@ -32,6 +32,7 @@ extension WheelViewController {
 extension WheelViewController {
     
     private func configureViewController() {
+        
         view.backgroundColor = .backgroundColor
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
     }
@@ -40,32 +41,17 @@ extension WheelViewController {
     private func addRings() {
         
         let gap: CGFloat = 10
-
-        outerRing = createRing(radius: view.frame.width / 3 - 20, strokeColor: UIColor.outlineStrokeColor, fillColor: UIColor.clear)
-        fillerRing = createRing(radius: view.frame.width / 3 - 20 - gap / 2, strokeColor: UIColor.outlineStrokeColor, fillColor: UIColor.backgroundColor, strokeEnd: 0, lineWidth: gap)
-        innerRing = createRing(radius:  view.frame.width / 3 - 20 - gap, strokeColor: UIColor.outlineStrokeColor, fillColor: UIColor.backgroundColor)
+        let outerRingRadius: CGFloat = view.frame.width / 3 - 20
+        let fillerRingRadius: CGFloat = outerRingRadius - gap / 2
+        let innerRingRadius: CGFloat = outerRingRadius - gap
+        
+        outerRing = addRing(radius: outerRingRadius, strokeColor: .outlineStrokeColor, fillColor: .clear, lineWidth: 5)
+        fillerRing = addRing(radius: fillerRingRadius, strokeColor: .outlineStrokeColor, fillColor: .backgroundColor, lineWidth: gap, strokeEnd: 0)
+        innerRing = addRing(radius: innerRingRadius, strokeColor: .outlineStrokeColor, fillColor: .backgroundColor, lineWidth: 5)
         
         view.layer.addSublayer(outerRing)
         view.layer.addSublayer(fillerRing)
         view.layer.addSublayer(innerRing)
-    }
-    
-    
-    private func createRing(radius: CGFloat, strokeColor: UIColor, fillColor: UIColor, strokeEnd: CGFloat = 1, lineWidth: CGFloat = 5) -> CAShapeLayer {
-        
-        let center = view.center
-        let ring = CAShapeLayer()
-         
-        let circularPath = UIBezierPath(arcCenter: center, radius: radius, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi - CGFloat.pi / 2, clockwise: true)
-         
-        ring.path = circularPath.cgPath
-        ring.strokeColor = strokeColor.cgColor
-        ring.fillColor = fillColor.cgColor
-        ring.lineCap = CAShapeLayerLineCap.round
-        ring.lineWidth = lineWidth
-        ring.strokeEnd = strokeEnd
-        
-        return ring
     }
     
     
