@@ -58,29 +58,12 @@ extension RingViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
     
-    private func createRing(radius: CGFloat, strokeColor: UIColor, fillColor: UIColor) -> CAShapeLayer {
-        
-        let center = view.center
-        let ring = CAShapeLayer()
-         
-        let circularPath = UIBezierPath(arcCenter: center, radius: radius, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi - CGFloat.pi / 2, clockwise: true)
-         
-        ring.path = circularPath.cgPath
-        ring.strokeColor = strokeColor.cgColor
-        ring.fillColor = fillColor.cgColor
-        ring.lineCap = CAShapeLayerLineCap.round
-        ring.lineWidth = 15
-        ring.strokeEnd = 1
-        
-        return ring
-    }
-    
     
     private func addRings() {
         
         let radius: CGFloat = view.frame.width / 3 - 20
-        trackRing = createRing(radius: radius, strokeColor:  UIColor.trackStrokeColor, fillColor: UIColor.clear)
-        shapeRing = createRing(radius: radius, strokeColor: UIColor.outlineStrokeColor, fillColor: UIColor.backgroundColor)
+        trackRing = addRing(radius: radius, strokeColor:  UIColor.trackStrokeColor, fillColor: UIColor.clear)
+        shapeRing = addRing(radius: radius, strokeColor: UIColor.outlineStrokeColor, fillColor: UIColor.backgroundColor)
         
         view.layer.addSublayer(trackRing)
         view.layer.addSublayer(shapeRing)
