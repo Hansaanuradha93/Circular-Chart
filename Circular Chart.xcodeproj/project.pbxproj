@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4705B4BE2488149700E43C86 /* WheelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4705B4BD2488149700E43C86 /* WheelViewController.swift */; };
 		47198749248C008D003E1076 /* CAShapeLayer+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47198748248C008D003E1076 /* CAShapeLayer+Ext.swift */; };
+		473EAB2E248D4F3700E44FFA /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473EAB2D248D4F3700E44FFA /* UIViewController+Ext.swift */; };
 		4743A271247E279B00FFA891 /* PulseLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4743A270247E279B00FFA891 /* PulseLayer.swift */; };
 		476AD12B2486BC6200B2E7B7 /* DoubleRingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476AD12A2486BC6200B2E7B7 /* DoubleRingViewController.swift */; };
 		4770E2772482B6CA00966741 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4770E2762482B6CA00966741 /* UIColor+Ext.swift */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		4705B4BD2488149700E43C86 /* WheelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelViewController.swift; sourceTree = "<group>"; };
 		47198748248C008D003E1076 /* CAShapeLayer+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CAShapeLayer+Ext.swift"; sourceTree = "<group>"; };
+		473EAB2D248D4F3700E44FFA /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		4743A270247E279B00FFA891 /* PulseLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseLayer.swift; sourceTree = "<group>"; };
 		476AD12A2486BC6200B2E7B7 /* DoubleRingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleRingViewController.swift; sourceTree = "<group>"; };
 		4770E2762482B6CA00966741 /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
@@ -81,17 +83,17 @@
 		4743A26D247E26CF00FFA891 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
-				4743A26F247E278200FFA891 /* Layers */,
+				4743A26F247E278200FFA891 /* Animation Layers */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
 		};
-		4743A26F247E278200FFA891 /* Layers */ = {
+		4743A26F247E278200FFA891 /* Animation Layers */ = {
 			isa = PBXGroup;
 			children = (
 				4743A270247E279B00FFA891 /* PulseLayer.swift */,
 			);
-			path = Layers;
+			path = "Animation Layers";
 			sourceTree = "<group>";
 		};
 		476AD1292486BBA600B2E7B7 /* Single Ring */ = {
@@ -115,6 +117,7 @@
 			children = (
 				4770E2762482B6CA00966741 /* UIColor+Ext.swift */,
 				47198748248C008D003E1076 /* CAShapeLayer+Ext.swift */,
+				473EAB2D248D4F3700E44FFA /* UIViewController+Ext.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				4778041224791D2300BDFA12 /* SceneDelegate.swift in Sources */,
 				4743A271247E279B00FFA891 /* PulseLayer.swift in Sources */,
 				47198749248C008D003E1076 /* CAShapeLayer+Ext.swift in Sources */,
+				473EAB2E248D4F3700E44FFA /* UIViewController+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
