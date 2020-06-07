@@ -6,6 +6,7 @@ class RingViewController: UIViewController {
     var shapeRing = CAShapeLayer()
     var trackRing = CAShapeLayer()
     var isFirstTime: Bool = true
+    var radius: CGFloat = 0
 
     
     // View Controller
@@ -60,10 +61,11 @@ extension RingViewController {
     
     
     private func addRings() {
+              
+        radius = view.frame.width / 3 - 20
         
-        let radius: CGFloat = view.frame.width / 3 - 20
-        trackRing = addRing(radius: radius, strokeColor:  UIColor.trackStrokeColor, fillColor: UIColor.clear)
-        shapeRing = addRing(radius: radius, strokeColor: UIColor.outlineStrokeColor, fillColor: UIColor.backgroundColor)
+        trackRing = addRing(radius: radius, strokeColor:  .trackStrokeColor, fillColor: .clear)
+        shapeRing = addRing(radius: radius, strokeColor: .outlineStrokeColor, fillColor: .backgroundColor)
         
         view.layer.addSublayer(trackRing)
         view.layer.addSublayer(shapeRing)
@@ -76,7 +78,8 @@ extension RingViewController {
     private func addPulseAnimation() {
         
         let center = view.center
-        let radius = view.frame.width / 3 - 20
+        radius = view.frame.width / 3 - 20
+        
         let pulse = PulseLayer(numberOfPulses: 10, radius: radius, position: center, backgroundColor: .pulsatingFillColor)
         pulse.animationDuration = 1.5
         pulse.backgroundColor = UIColor.pulsatingFillColor.cgColor
