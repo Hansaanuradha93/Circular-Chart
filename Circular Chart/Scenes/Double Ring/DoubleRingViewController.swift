@@ -39,8 +39,12 @@ extension DoubleRingViewController {
     
     private func addRings() {
         
-        innerRing = addRing(radius: view.frame.width / 3 - 20 - 15, strokeColor: UIColor.outlineStrokeColor, fillColor: UIColor.backgroundColor)
-        outerRing = addRing(radius: view.frame.width / 3 - 20, strokeColor: UIColor.trackStrokeColor, fillColor: UIColor.clear)
+        let outerRingRadius: CGFloat = view.frame.width / 3 - 20
+        let innerRingRadius: CGFloat = view.frame.width / 3 - 20 - 15
+        
+        outerRing = addRing(radius: outerRingRadius, strokeColor: .trackStrokeColor, fillColor: .clear)
+        innerRing = addRing(radius: innerRingRadius, strokeColor: .outlineStrokeColor, fillColor: .backgroundColor)
+        
         view.layer.addSublayer(outerRing)
         view.layer.addSublayer(innerRing)
     }
