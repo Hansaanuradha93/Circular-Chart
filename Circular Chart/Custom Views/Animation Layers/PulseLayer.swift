@@ -19,7 +19,6 @@ class PulseLayer: CALayer {
     
     init(numberOfPulses: Float = Float.infinity, radius: CGFloat, position: CGPoint, backgroundColor: UIColor) {
         super.init()
-        
         self.backgroundColor = backgroundColor.cgColor
         self.contentsScale = UIScreen.main.scale
         self.opacity = 0
@@ -41,7 +40,6 @@ class PulseLayer: CALayer {
 extension PulseLayer {
     
     private func createScaleAnimation() -> CABasicAnimation {
-        
         let scaleAnimation = CABasicAnimation(keyPath: "transform.scale")
         scaleAnimation.toValue = 1.2
         scaleAnimation.duration = animationDuration
@@ -51,7 +49,6 @@ extension PulseLayer {
     
     
     private func createOpacityAnimation() -> CAKeyframeAnimation {
-        
         let opacityAnimation = CAKeyframeAnimation(keyPath: "opacity")
         opacityAnimation.duration = animationDuration
         opacityAnimation.values = [0, 0.2, 0.4]
@@ -62,7 +59,6 @@ extension PulseLayer {
     
     
     private func setupAnimationGroup() {
-        
         self.animationGroup = CAAnimationGroup()
         self.animationGroup.duration = animationDuration + nextPulseAfter
         self.animationGroup.repeatCount = numberOfPulses
