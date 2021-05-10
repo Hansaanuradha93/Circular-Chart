@@ -11,7 +11,6 @@ class WheelViewController: UIViewController {
     // MARK: ViewController
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configureViewController()
         addRings()
     }
@@ -32,14 +31,12 @@ extension WheelViewController {
 extension WheelViewController {
     
     private func configureViewController() {
-        
         view.backgroundColor = .backgroundColor
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
     }
     
     
     private func addRings() {
-        
         let gap: CGFloat = 10
         let outerRingRadius: CGFloat = view.frame.width / 3 - 20
         let fillerRingRadius: CGFloat = outerRingRadius - gap / 2
