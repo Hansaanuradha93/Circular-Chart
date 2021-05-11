@@ -31,14 +31,12 @@ extension DoubleRingViewController {
 extension DoubleRingViewController {
     
     private func configureViewController() {
-        
         view.backgroundColor = .backgroundColor
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
     }
     
     
     private func addRings() {
-        
         let outerRingRadius: CGFloat = view.frame.width / 3 - 20
         let innerRingRadius: CGFloat = view.frame.width / 3 - 20 - 15
         
