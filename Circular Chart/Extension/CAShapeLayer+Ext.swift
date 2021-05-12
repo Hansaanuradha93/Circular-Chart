@@ -3,7 +3,6 @@ import UIKit
 extension CAShapeLayer {
     
     func strokeEndAnimation(fromValue: CGFloat, toValue: CGFloat, duration: CFTimeInterval) {
-        
         let strokeAnimation = CABasicAnimation(keyPath: "strokeEnd")
         strokeAnimation.fromValue = fromValue
         strokeAnimation.toValue = toValue
