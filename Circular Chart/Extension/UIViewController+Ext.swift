@@ -3,7 +3,6 @@ import UIKit
 extension UIViewController {
     
     func addRing(radius: CGFloat, strokeColor: UIColor, fillColor: UIColor, lineWidth: CGFloat = 15, strokeEnd: CGFloat = 1) -> CAShapeLayer {
-        
         let center = view.center
         let ring = CAShapeLayer()
          
