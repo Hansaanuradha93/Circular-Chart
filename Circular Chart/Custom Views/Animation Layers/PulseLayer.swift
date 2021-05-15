@@ -37,9 +37,9 @@ class PulseLayer: CALayer {
 }
 
 // MARK: Methods
-extension PulseLayer {
+private extension PulseLayer {
     
-    private func createScaleAnimation() -> CABasicAnimation {
+    func createScaleAnimation() -> CABasicAnimation {
         let scaleAnimation = CABasicAnimation(keyPath: "transform.scale")
         scaleAnimation.toValue = 1.2
         scaleAnimation.duration = animationDuration
@@ -48,7 +48,7 @@ extension PulseLayer {
     }
     
     
-    private func createOpacityAnimation() -> CAKeyframeAnimation {
+    func createOpacityAnimation() -> CAKeyframeAnimation {
         let opacityAnimation = CAKeyframeAnimation(keyPath: "opacity")
         opacityAnimation.duration = animationDuration
         opacityAnimation.values = [0, 0.2, 0.4]
@@ -58,14 +58,14 @@ extension PulseLayer {
     }
     
     
-    private func setupAnimationGroup() {
-        self.animationGroup = CAAnimationGroup()
-        self.animationGroup.duration = animationDuration + nextPulseAfter
-        self.animationGroup.repeatCount = numberOfPulses
-        self.animationGroup.autoreverses = true
+    func setupAnimationGroup() {
+        animationGroup = CAAnimationGroup()
+        animationGroup.duration = animationDuration + nextPulseAfter
+        animationGroup.repeatCount = numberOfPulses
+        animationGroup.autoreverses = true
         
         let defaultCurve = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
-        self.animationGroup.timingFunction = defaultCurve
-        self.animationGroup.animations = [createScaleAnimation(), createOpacityAnimation()]
+        animationGroup.timingFunction = defaultCurve
+        animationGroup.animations = [createScaleAnimation(), createOpacityAnimation()]
     }
 }

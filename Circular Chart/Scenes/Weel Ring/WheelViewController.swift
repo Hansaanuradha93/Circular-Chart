@@ -21,22 +21,22 @@ class WheelViewController: UIViewController {
 
 
 // MARK: - Objc Methods
-extension WheelViewController {
+private extension WheelViewController {
     
     @objc func handleTap() { addStrokeEndAnimation() }
 }
 
 
 // MARK: - Methods
-extension WheelViewController {
+private extension WheelViewController {
     
-    private func configureViewController() {
+    func configureViewController() {
         view.backgroundColor = .backgroundColor
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
     }
     
     
-    private func addRings() {
+    func addRings() {
         let gap: CGFloat = 10
         let outerRingRadius: CGFloat = view.frame.width / 3 - 20
         let fillerRingRadius: CGFloat = outerRingRadius - gap / 2
@@ -52,5 +52,5 @@ extension WheelViewController {
     }
     
     
-    private func addStrokeEndAnimation() { fillerRing.strokeEndAnimation(fromValue: 0, toValue: 1, duration: 15) }
+    func addStrokeEndAnimation() { fillerRing.strokeEndAnimation(fromValue: 0, toValue: 1, duration: 15) }
 }
