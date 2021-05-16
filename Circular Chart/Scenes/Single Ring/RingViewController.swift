@@ -23,9 +23,9 @@ class RingViewController: UIViewController {
 
 
 // MARK: - Objc Methods
-extension RingViewController {
+private extension RingViewController {
     
-    @objc private func willEnterForeground() {
+    @objc func willEnterForeground() {
         if !isFirstTime {
             addPulseAnimation()
         } else {
@@ -42,20 +42,20 @@ extension RingViewController {
 
 
 // MARK: - Methods
-extension RingViewController {
+private extension RingViewController {
     
-    private func configureViewController() {
+    func configureViewController() {
         view.backgroundColor = .backgroundColor
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
     }
 
     
-    private func setupNotification() {
+    func setupNotification() {
         NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
     
     
-    private func addRings() {
+    func addRings() {
         radius = view.frame.width / 3 - 20
         
         trackRing = addRing(radius: radius, strokeColor:  .trackStrokeColor, fillColor: .clear)
@@ -66,10 +66,10 @@ extension RingViewController {
     }
     
     
-    private func addStrokeEndAnimation() { shapeRing.strokeEndAnimation(fromValue: 1, toValue: 0, duration: 15) }
+    func addStrokeEndAnimation() { shapeRing.strokeEndAnimation(fromValue: 1, toValue: 0, duration: 15) }
     
     
-    private func addPulseAnimation() {
+    func addPulseAnimation() {
         let center = view.center
         radius = view.frame.width / 3 - 20
         
