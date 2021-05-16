@@ -21,22 +21,22 @@ class DoubleRingViewController: UIViewController {
 
 
 // MARK: - Objc Methods
-extension DoubleRingViewController {
+private extension DoubleRingViewController {
     
     @objc func handleTap() { addStrokeEndAnimation() }
 }
 
 
 // MARK: - Methods
-extension DoubleRingViewController {
+private extension DoubleRingViewController {
     
-    private func configureViewController() {
+    func configureViewController() {
         view.backgroundColor = .backgroundColor
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
     }
     
     
-    private func addRings() {
+    func addRings() {
         let outerRingRadius: CGFloat = view.frame.width / 3 - 20
         let innerRingRadius: CGFloat = view.frame.width / 3 - 20 - 15
         
@@ -48,5 +48,5 @@ extension DoubleRingViewController {
     }
 
     
-    private func addStrokeEndAnimation() { innerRing.strokeEndAnimation(fromValue: 1, toValue: 0, duration: 15) }
+    func addStrokeEndAnimation() { innerRing.strokeEndAnimation(fromValue: 1, toValue: 0, duration: 15) }
 }
