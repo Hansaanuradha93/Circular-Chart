@@ -14,7 +14,7 @@ class PulseLayer: CALayer {
     override init(layer: Any) { super.init(layer: layer) }
     
     
-    required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
+    required init?(coder: NSCoder) { fatalError() }
     
     
     init(numberOfPulses: Float = Float.infinity, radius: CGFloat, position: CGPoint, backgroundColor: UIColor) {
@@ -43,7 +43,6 @@ private extension PulseLayer {
         let scaleAnimation = CABasicAnimation(keyPath: "transform.scale")
         scaleAnimation.toValue = 1.2
         scaleAnimation.duration = animationDuration
-        
         return scaleAnimation
     }
     
@@ -53,7 +52,6 @@ private extension PulseLayer {
         opacityAnimation.duration = animationDuration
         opacityAnimation.values = [0, 0.2, 0.4]
         opacityAnimation.keyTimes = [0, 0.4, 0.6]
-        
         return opacityAnimation
     }
     
