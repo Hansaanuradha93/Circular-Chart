@@ -16,19 +16,17 @@ class WheelViewController: UIViewController {
     }
     
     
-    override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
-}
-
-
-// MARK: - Objc Methods
-private extension WheelViewController {
-    
-    @objc func handleTap() { addStrokeEndAnimation() }
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 }
 
 
 // MARK: - Methods
 private extension WheelViewController {
+    
+    @objc func handleTap() { addStrokeEndAnimation() }
+    
     
     func configureViewController() {
         view.backgroundColor = .backgroundColor
@@ -52,5 +50,6 @@ private extension WheelViewController {
     }
     
     
-    func addStrokeEndAnimation() { fillerRing.strokeEndAnimation(fromValue: 0, toValue: 1, duration: 15) }
+    func addStrokeEndAnimation() { fillerRing.strokeEndAnimation(fromValue: 0, toValue: 1, duration: 15)
+    }
 }
