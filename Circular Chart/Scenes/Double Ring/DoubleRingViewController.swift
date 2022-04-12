@@ -16,19 +16,19 @@ class DoubleRingViewController: UIViewController {
     }
     
     
-    override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
-}
-
-
-// MARK: - Objc Methods
-private extension DoubleRingViewController {
-    
-    @objc func handleTap() { addStrokeEndAnimation() }
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 }
 
 
 // MARK: - Methods
 private extension DoubleRingViewController {
+    
+    @objc func handleTap() {
+        addStrokeEndAnimation()
+    }
+
     
     func configureViewController() {
         view.backgroundColor = .backgroundColor
@@ -48,5 +48,6 @@ private extension DoubleRingViewController {
     }
 
     
-    func addStrokeEndAnimation() { innerRing.strokeEndAnimation(fromValue: 1, toValue: 0, duration: 15) }
+    func addStrokeEndAnimation() { innerRing.strokeEndAnimation(fromValue: 1, toValue: 0, duration: 15)
+    }
 }
