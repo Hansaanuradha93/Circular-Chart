@@ -36,7 +36,7 @@ class PulseLayer: CALayer {
     }
 }
 
-// MARK: Methods
+// MARK: - Methods
 private extension PulseLayer {
     
     func createScaleAnimation() -> CABasicAnimation {
