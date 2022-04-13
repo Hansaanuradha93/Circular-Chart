@@ -18,7 +18,9 @@ class RingViewController: UIViewController {
     }
     
     
-    override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 }
 
 
