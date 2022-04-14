@@ -9,6 +9,6 @@ extension UIColor {
     static let pulsatingFillColor = UIColor.rgb(r: 86, g: 30, b: 63)
     
     
-    // Methods
+    // MARK: Methods
     static func rgb(r: CGFloat, g: CGFloat, b: CGFloat) -> UIColor { return UIColor(red: r/255, green: g/255, blue: b/255, alpha: 1)}
 }
