@@ -36,6 +36,7 @@ class PulseLayer: CALayer {
     }
 }
 
+
 // MARK: - Methods
 private extension PulseLayer {
     
