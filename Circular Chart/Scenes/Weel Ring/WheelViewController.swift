@@ -25,7 +25,9 @@ class WheelViewController: UIViewController {
 // MARK: - Methods
 private extension WheelViewController {
     
-    @objc func handleTap() { addStrokeEndAnimation() }
+    @objc func handleTap() {
+        addStrokeEndAnimation()
+    }
     
     
     func configureViewController() {
